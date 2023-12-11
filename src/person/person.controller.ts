@@ -18,16 +18,16 @@ import { AnyFilesInterceptor } from "@nestjs/platform-express";
 @Controller('api/person')
 export class PersonController {
   constructor(private readonly personService: PersonService) {}
-  @Post('file')
-  @UseInterceptors(
-    AnyFilesInterceptor({
-    dest:'uploads/'
-  }))
-  body2(@Body() createPersonDto: CreatePersonDto,
-        @UploadedFiles() files: Array<Express.Multer.File>) {
-    console.log(files)
-    return `r: ${JSON.stringify(createPersonDto)}`
-  }
+  // @Post('file')
+  // @UseInterceptors(
+  //   AnyFilesInterceptor({
+  //   dest:'uploads/'
+  // }))
+  // body2(@Body() createPersonDto: CreatePersonDto,
+  //       @UploadedFiles() files: Array<Express.Multer.File>) {
+  //   console.log(files)
+  //   return `r: ${JSON.stringify(createPersonDto)}`
+  // }
 
   @Post()
   body(@Body() createPersonDto: CreatePersonDto){
